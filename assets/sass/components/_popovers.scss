@@ -1,0 +1,176 @@
+/*
+==========================================================================
+    Popovers (Bootstrap)
+==========================================================================
+*/
+
+$popover-bg:                          $col-sec;
+$popover-max-width:                   250px;
+$popover-border-color:                rgba( #000, .2 );
+$popover-title-bg:                    tint( $col-sec, 10% );
+$popover-arrow-width:                 10px;
+$popover-arrow-color:                 $popover-bg;
+$popover-arrow-outer-width:           ($popover-arrow-width + 1);
+$popover-arrow-outer-color:           shade( $popover-bg, 10% );
+
+.popover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: $zindex-popover;
+    display: none;
+    max-width: $popover-max-width;
+    padding: 0;
+    // font reset
+    font-style: normal;
+    font-weight: normal;
+    letter-spacing: normal;
+    line-break: auto;
+    text-align: left;
+    text-align: start;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: none;
+    white-space: normal;
+    word-break: normal;
+    word-spacing: normal;
+    word-wrap: normal;
+    font-size: 1rem;
+    // end font reset
+    background-clip: padding-box;
+    border-radius: .25em;
+    background-color: $popover-bg;
+    box-shadow: 0 2px 5px rgba( #000, .1 ), 0 0 0 1px rgba( #000, .05 );
+
+    // Offset the popover to account for the popover arrow
+    &.top     { margin-top: -($popover-arrow-width + 5px); }
+    &.right   { margin-left: $popover-arrow-width + 5px; }
+    &.bottom  { margin-top: $popover-arrow-width + 5px; }
+    &.left    { margin-left: -($popover-arrow-width + 5px); }
+}
+
+.popover-title {
+    padding: 10px 15px;
+    border-radius: .25em .25em 0 0;
+    background-color: $popover-title-bg;
+    color: #fff;
+    font-size: .875em;
+}
+
+.popover-content {
+    padding: 15px;
+    color: #fff;
+    font-size: .75em;
+    line-height: 1.618em;
+
+    * {
+        color: inherit;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        margin: 1em 0 .25em;
+        @include flexmargin;
+    }
+
+    ul,
+    ol {
+        margin: 10px 15px;
+        @include flexmargin;
+    }
+}
+
+// Arrows
+// .arrow is outer, .arrow:after is inner
+
+.popover > .arrow {
+    &,
+    &:after {
+        position: absolute;
+        display: block;
+        width: 0;
+        height: 0;
+        border-color: transparent;
+        border-style: solid;
+    }
+}
+
+.popover > .arrow {
+    border-width: $popover-arrow-outer-width;
+}
+
+.popover > .arrow:after {
+    border-width: $popover-arrow-width;
+    content: "";
+}
+
+.popover {
+
+    &.top > .arrow {
+        left: 50%;
+        margin-left: -$popover-arrow-outer-width;
+        border-bottom-width: 0;
+        border-top-color: $popover-arrow-outer-color;
+        bottom: -$popover-arrow-outer-width;
+
+        &:after {
+            content: " ";
+            bottom: 1px;
+            margin-left: -$popover-arrow-width;
+            border-bottom-width: 0;
+            border-top-color: $popover-arrow-color;
+        }
+    }
+
+    &.right > .arrow {
+        top: 50%;
+        left: -$popover-arrow-outer-width;
+        margin-top: -$popover-arrow-outer-width;
+        border-left-width: 0;
+        border-right-color: $popover-arrow-outer-color;
+
+        &:after {
+            content: " ";
+            left: 1px;
+            bottom: -$popover-arrow-width;
+            border-left-width: 0;
+            border-right-color: $popover-arrow-color;
+        }
+    }
+
+    &.bottom > .arrow {
+        left: 50%;
+        margin-left: -$popover-arrow-outer-width;
+        border-top-width: 0;
+        border-bottom-color: $popover-arrow-outer-color;
+        top: -$popover-arrow-outer-width;
+
+        &:after {
+            content: " ";
+            top: 1px;
+            margin-left: -$popover-arrow-width;
+            border-top-width: 0;
+            border-bottom-color: $popover-arrow-color;
+        }
+    }
+
+    &.left > .arrow {
+        top: 50%;
+        right: -$popover-arrow-outer-width;
+        margin-top: -$popover-arrow-outer-width;
+        border-right-width: 0;
+        border-left-color: $popover-arrow-outer-color;
+
+        &:after {
+            content: " ";
+            right: 1px;
+            border-right-width: 0;
+            border-left-color: $popover-arrow-color;
+            bottom: -$popover-arrow-width;
+        }
+    }
+}

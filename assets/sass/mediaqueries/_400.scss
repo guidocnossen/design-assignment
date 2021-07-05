@@ -1,0 +1,17 @@
+/**
+* Extra Small Devices, Phones
+**/
+
+/* == When screen is 400px or smaller == */
+@media only screen and (max-width : 400px) {
+
+}
+
+/* == When screen is larger than 400px == */
+@media only screen and (min-width : 401px) {
+
+    .hidden-xs {
+        display: none !important;
+    }
+
+}

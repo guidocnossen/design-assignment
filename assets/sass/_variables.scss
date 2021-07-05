@@ -1,0 +1,47 @@
+/*
+==========================================================================
+    Variables
+==========================================================================
+*/
+
+$col-prim: #f8a322;         // Orange
+$col-sec: #b3b8bc;          // Light grey
+$col-tert: #333333;         // Grey Darker
+
+$col-body-bg: #f9f9f9;
+
+$col-text: #333;
+$col-text-x-dark: shade( $col-text, 50% );
+$col-text-dark: shade( $col-text, 25% );
+$col-text-medium: tint( $col-text, 25% );
+$col-text-light: tint( $col-text, 50% );
+$col-text-x-light: tint( $col-text, 75% );
+
+$col-grey-x-light: tint( $col-text, 97.5% );
+$col-grey-light: tint( $col-text, 95% );
+$col-grey: tint( $col-text, 90% );
+$col-grey-medium: tint( $col-text, 85% );
+$col-grey-dark: tint( $col-text, 80% );
+$col-grey-x-dark: tint( $col-text, 70% );
+
+$font-prim: 'Poppins', system-ui, sans-serif;
+$font-sec: $font-prim;
+
+$font-size-base: 16px;
+$font-size-base-mobile: 14px;
+
+$col-error: red;
+$col-warning: orange;
+$col-success: green;
+
+$col-twitter: #1da1f2;
+$col-facebook: #2172f0;
+$col-linkedin: #0077b5;
+$col-google: #dd4b39;
+$col-youtube: #ff0000;
+$col-vimeo: #0faef1;
+$col-instagram: #405de6;
+$col-whatsapp: #25d366;
+$col-pinterest: #bd081c;
+$col-dropbox: #007ee5;
+$col-paypal: #0070ba;

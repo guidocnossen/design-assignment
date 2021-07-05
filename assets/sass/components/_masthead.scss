@@ -1,0 +1,110 @@
+/*
+==========================================================================
+    Header
+==========================================================================
+*/
+
+.masthead {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6em;
+    padding: 0 2em;
+    background-color: #fff;
+    white-space: nowrap;
+    box-shadow: 0 1px 0 0 rgba(#000, .05);
+    user-select: none;
+
+    &.masthead--inline {
+        position: relative;
+    }
+
+    &.masthead--fixed {
+        position: fixed;
+        top: auto;
+        bottom: 100%;
+        transition: transform .3s ease-in-out, box-shadow .3s ease-in-out;
+    }
+
+    &.masthead--visible {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    &.masthead--inverted:not(.masthead--fixed):not(.masthead--menu-visible):not(.masthead--search-visible) {
+        background-color: transparent;
+        box-shadow: none;
+    }
+
+    &.masthead--menu-visible,
+    &.masthead--search-visible {
+        box-shadow: 0 0 0 0 rgba(#000, .05);
+    }
+
+    &__left,
+    &__right {
+        display: flex;
+        align-items: center;
+        width: 100%;
+
+        & > :not(:first-child) {
+            margin-left: 5em;
+        }
+    }
+
+    &__right {
+        justify-content: flex-end;
+        margin-right: 5em;
+    }
+
+    &__left {
+        margin-left: 5em;
+    }
+
+    &__item {
+        @include input-style-reset;
+        display: block;
+        width: 25%; 
+        align-items: center;
+        padding: .5em 0;
+        font-family: $font-sec;
+        font-size: 1.5em;
+        color: $col-text-medium;
+        line-height: 1em;
+        text-transform: capitalize;
+        letter-spacing: .05em;
+
+        &:hover,
+        &:focus {
+            color: $col-prim;
+        }
+    }
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    left: 45%;
+    color: white;
+    font-size: 5em;
+    z-index: 51;
+    display: block;
+    border-radius: 100px;
+    background-color: white;
+    padding: 1.1em 1em;
+
+    & > .logo {
+        position: absolute;
+        top: 0;
+        color: $col-text-medium;
+        text-decoration: none;
+        transition: all .15s ease-in-out, top 0s;
+        cursor: pointer;
+        z-index: 100;
+        margin-top: 0.5em;
+        margin-left: -.25em;
+        font-weight: bold;
+    }
+}

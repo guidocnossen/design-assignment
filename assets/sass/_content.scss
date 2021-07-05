@@ -1,0 +1,340 @@
+/*
+==========================================================================
+    .content-wrapper styles
+==========================================================================
+*/
+
+.content {
+
+    &.content--inverted {
+        color: #fff;
+
+        * {
+            color: inherit;
+        }
+    }
+
+    &.content--columns {
+        column-count: 2;
+        column-gap: 60px;
+    }
+
+    &.content--larger {
+        font-size: 1.125em;
+    }
+
+    &.content--smaller {
+        font-size: .875em;
+    }
+
+    &.content--lighter {
+        opacity: .5;
+
+        * {
+            color: $col-text-dark;
+        }
+    }
+
+    &.content--margin {
+        margin: 1.5em 0;
+        @include flexmargin;
+    }
+
+    .wp-caption  {
+        max-width: 100%;
+        margin: 2em auto;
+
+        &.alignleft {
+            float: left;
+            margin: 2em 2.5em 2em 0;
+        }
+
+        &.alignright {
+            float: right;
+            margin: 2em 0 2em 2.5em;
+        }
+
+        &.aligncenter {
+            display: block;
+            margin: 2em auto;
+        }
+
+        @include flexmargin;
+
+        .wp-caption-text {
+            margin: 1em 0 0;
+            color: $col-text;
+            font-size: .875em;
+            font-style: italic;
+        }
+    }
+
+    img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        border-radius: .25em;
+
+        &.alignnone {
+            display: block;
+            margin: 2em auto;
+        }
+
+        &.alignleft {
+            float: left;
+            margin: 2em 2.5em 2em 0;
+        }
+
+        &.alignright {
+            float: right;
+            margin: 2em 0 2em 2.5em;
+        }
+
+        &.aligncenter {
+            display: block;
+            margin: 2em auto;
+        }
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        clear: both;
+        margin: 1.5em 0 .25em;
+        @include flexmargin;
+    }
+
+    h1 {
+        font-size: 3.5em;
+    }
+
+    h2 {
+        font-size: 2em;
+    }
+
+    h3 {
+        font-size: 1.5em;
+    }
+
+    h4 {
+        font-size: 1.25em;
+    }
+
+    h5 {
+        font-size: 1.125em;
+    }
+
+    h6 {
+        font-size: 1em;
+    }
+
+    p {
+        margin: 1.5em 0;
+        @include flexmargin;
+        line-height: 1.8em; // higher line-height for even better readability in long texts
+
+        a {
+            text-decoration: underline;
+
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }
+        }
+
+        .btn {
+            margin: 10px 5px 0;
+            @include flexmargin(horizontal);
+
+            &.btn-full {
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+
+        &.intro {
+            color: $col-text-medium;
+            font-size: 1.5em;
+        }
+
+        &.micro {
+            color: $col-text-light;
+            font-size: .75rem;
+        }
+    }
+
+    hr {}
+
+    ul,
+    ol {
+        margin: 2em 0 2em 1.5em;
+        @include flexmargin;
+
+        &.list-icons {
+            list-style: none;
+            margin-left: 40px;
+            text-align: left;
+
+            li {
+                position: relative;
+
+                .item-icon {
+                    position: absolute;
+                    top: 50%;
+                    right: calc( 100% + 10px );
+                    width: 30px;
+                    margin-top: -.5em;
+                    color: $col-prim;
+                    font-size: 1rem;
+                    line-height: 1em;
+                    text-align: center;
+                }
+            }
+        }
+
+        &.list-checked {
+            list-style: none;
+            margin-left: 40px;
+            text-align: left;
+
+            li {
+                position: relative;
+
+                .item-icon {
+                    position: absolute;
+                    top: calc( 3px + .25rem);
+                    right: calc( 100% + 10px );
+                    width: 30px;
+                    color: $col-prim;
+                    font-size: 1rem;
+                    line-height: 1em;
+                    text-align: center;
+                }
+            }
+        }
+
+        li {
+            color: $col-text;
+            line-height: 1.5em;
+
+            &:not(:first-child) {
+                margin-top: .5em;
+            }
+        }
+    }
+
+    blockquote {
+        max-width: 700px;
+        margin: 2em auto;
+        @include flexmargin;
+        text-align: center;
+
+        p {
+            font-family: $font-sec;
+            color: $col-prim;
+            font-size: 1.5em;
+            line-height: 1.5em;
+            font-style: italic;
+
+            &:first-child:before {
+                content: open-quote;
+            }
+
+            &:last-child:after {
+                content: close-quote;
+            }
+        }
+    }
+
+    .table-wrapper {
+        position: relative;
+        display: flex;
+        margin: 2em -15px;
+        @include flexmargin;
+        overflow-x: auto;
+        padding: 0 15px;
+        white-space: nowrap;
+
+        &:after { // simulating right padding
+            content: '';
+            min-width: 15px;
+        }
+
+        &::-webkit-scrollbar {
+            height: 0;
+            width: 0;
+        }
+    }
+
+    table {
+        width: 100%;
+        margin: 2em 0;
+        @include flexmargin;
+        border-collapse: collapse;
+        color: $col-text;
+        font-size: 1em;
+
+        th,
+        td {
+            padding: .75em;
+        }
+
+        tr {
+
+            &:nth-child(odd) {
+                background-color: rgba( #000, .025 );
+            }
+
+            &:not(:last-child) {
+
+                th,
+                td {
+                    border-bottom: 2px solid $col-grey;
+                }
+            }
+        }
+
+        thead {}
+
+        tbody {}
+    }
+
+    iframe {
+        max-width: 100%;
+        margin: 3em 0;
+        @include flexmargin;
+    }
+
+    pre {
+        display: block;
+        margin: 2em 0;
+        @include flexmargin;
+        padding: 1em 1.5em;
+        border-radius: .5em;
+        border: 1px solid $col-grey-dark;
+        background-color: $col-grey-light;
+        font-family: monospace;
+        color: $col-text;
+        font-size: 1em;
+        line-height: 1.5em;
+        white-space: normal;
+    }
+
+    .content-highlight {
+        display: block;
+        margin: 3em -1.5em;
+        padding: 1.5em;
+        border-radius: .5em;
+        border: 1px solid tint( $col-prim, 50% );
+        background-color: tint( $col-prim, 90% );
+        @include flexmargin;
+        color: shade( $col-prim, 20% );
+
+        * {
+            color: inherit;
+        }
+    }
+}

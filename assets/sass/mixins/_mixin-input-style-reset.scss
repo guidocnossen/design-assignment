@@ -1,0 +1,12 @@
+@mixin input-style-reset {
+    appearance: none;
+    height: auto;
+    width: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    background: none;
+    font-family: inherit;
+    font-size: 1rem;
+}

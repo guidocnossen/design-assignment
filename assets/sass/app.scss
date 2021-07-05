@@ -1,0 +1,38 @@
+/*
+==========================================================================
+    Import all SCSS parts here
+==========================================================================
+*/
+
+// import base components
+@import 'mixins';
+@import 'functions';
+@import 'variables';
+
+// import font-awesome
+@import 'fontawesome/fontawesome';
+@import 'fontawesome/light';
+@import 'fontawesome/regular';
+@import 'fontawesome/solid';
+@import 'fontawesome/duotone';
+@import 'fontawesome/brands';
+
+// import bootstrap components
+@import 'bootstrap';
+
+// import plugin stylesheets
+@import 'slick';
+@import 'nivo-lightbox/nivo-lightbox';
+@import 'nivo-lightbox/themes/default/default';
+@import 'pikaday';
+
+// import scss parts
+@import 'base';
+@import 'font-face';
+@import 'animations';
+@import 'grid';
+@import 'content';
+@import 'components';
+@import 'body-classes';
+@import 'ie';
+@import 'mediaqueries';

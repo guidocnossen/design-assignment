@@ -1,0 +1,276 @@
+.pika-single {
+    position: relative;
+    z-index: 9999;
+    display: block;
+    font-family: inherit;
+    color: $col-text;
+    *zoom: 1;
+
+    &:before,
+    &:after {
+        content: ' ';
+        display: table;
+    }
+
+    &:after {
+        clear: both;
+    }
+
+    &.is-hidden {
+        display: none;
+    }
+
+    &.is-bound {
+        position: absolute !important;
+        box-shadow: 0 10px 25px -5px rgba( #000, .25 );
+    }
+
+    .pika-lendar {
+        float: left;
+        padding: 0;
+        width: 100%;
+        background: #fff;
+
+        .pika-title {
+            position: relative;
+            margin: 0 0 10px;
+            text-align: center;
+
+            .pika-label {
+                display: inline-block;
+                *display: inline;
+                position: relative;
+                z-index: 9999;
+                overflow: hidden;
+                margin: 0;
+                padding: 5px 3px;
+                color: $col-text;
+                font-size: 1em;
+                line-height: 20px;
+                font-weight: 700;
+                background-color: #fff;
+                transition: all .15s ease-in-out;
+
+                &:hover {
+                    color: $col-prim;
+                }
+
+                select {
+                    cursor: pointer;
+                    position: absolute;
+                    z-index: 9998;
+                    margin: 0;
+                    left: 0;
+                    top: 5px;
+                    height: auto;
+                    padding: 0;
+                    filter: alpha(opacity=0);
+                    opacity: 0;
+                }
+            }
+
+            .pika-select {
+                display: inline-block;
+                *display: inline;
+            }
+        }
+
+        .pika-prev,
+        .pika-next {
+            display: block;
+            cursor: pointer;
+            position: relative;
+            outline: none;
+            border: 0;
+            padding: 0;
+            width: 20px;
+            height: 30px;
+            text-indent: 20px; /* hide text using text-indent trick, using width value (it's enough) */
+            white-space: nowrap;
+            overflow: hidden;
+            background-color: transparent;
+            background-position: center center;
+            background-repeat: no-repeat;
+            background-size: 75% 75%;
+            opacity: .5;
+            *position: absolute;
+            *top: 0;
+            transition: all .15s ease-in-out;
+
+            &:hover {
+                opacity: 1;
+            }
+
+            &.is-disabled {
+                cursor: not-allowed;
+                opacity: .2;
+            }
+        }
+
+        .pika-prev,
+        .is-rtl .pika-next {
+            float: left;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAUklEQVR42u3VMQoAIBADQf8Pgj+OD9hG2CtONJB2ymQkKe0HbwAP0xucDiQWARITIDEBEnMgMQ8S8+AqBIl6kKgHiXqQqAeJepBo/z38J/U0uAHlaBkBl9I4GwAAAABJRU5ErkJggg==');
+            *left: 0;
+        }
+
+        .pika-next,
+        .is-rtl .pika-prev {
+            float: right;
+            background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAeCAYAAAAsEj5rAAAAU0lEQVR42u3VOwoAMAgE0dwfAnNjU26bYkBCFGwfiL9VVWoO+BJ4Gf3gtsEKKoFBNTCoCAYVwaAiGNQGMUHMkjGbgjk2mIONuXo0nC8XnCf1JXgArVIZAQh5TKYAAAAASUVORK5CYII=');
+            *right: 0;
+        }
+
+        .pika-table {
+            width: 100%;
+            border-collapse: collapse;
+            border-spacing: 0;
+            border: 0;
+
+            th,
+            td {
+                width: 14.285714285714286%;
+                padding: 0;
+            }
+
+            th {
+                padding: 0 0 10px;
+                color: $col-text-light;
+                font-size: 12px;
+                line-height: 25px;
+                font-weight: bold;
+                text-align: center;
+                text-transform: uppercase;
+            }
+
+            abbr {
+                cursor: default;
+                border: 0;
+                text-decoration: none;
+            }
+
+            td {
+                padding: 1px;
+
+                // weekend highlighting - if weeknumbers are shown, update these values (1 & 7, with weekno 2 & 8)
+                &:nth-child(1),
+                &:nth-child(7) {
+
+                    .pika-button {
+                        background-color: tint( $col-prim, 85% );
+                        color: $col-prim;
+                        font-weight: 900;
+                    }
+                }
+
+                &.is-today {
+
+                    .pika-button {
+                        background: #fff;
+                        font-weight: 900;
+                    }
+                }
+
+                &.is-selected {
+
+                    .pika-button {
+                        background: $col-prim;
+                        color: #fff;
+                        font-weight: 900;
+
+                        &:hover {
+                            background: $col-prim;
+                        }
+                    }
+                }
+
+                &.is-inrange {
+
+                    .pika-button {
+                        background: tint( $col-prim, 20% );
+                        color: #fff;
+                    }
+                }
+
+                &.is-startrange,
+                &.is-endrange {
+
+                    .pika-button {
+                        background: $col-prim;
+                        color: #fff;
+                    }
+                }
+
+                &.is-disabled,
+                &.is-outside-current-month {
+
+                    &.is-startrange,
+                    &.is-endrange {
+
+                        .pika-button {
+                            background: $col-prim; // date is disabled, but is start or end of selected range
+                            color: #fff;
+                            opacity: 1;
+                        }
+                    }
+
+                    &.is-inrange {
+
+                        .pika-button {
+                            background: tint( $col-prim, 20% ); // date is disabled, but is inrange
+                            color: #fff;
+                            opacity: 1;
+                        }
+                    }
+
+                    &.is-today {
+
+                        .pika-button {
+                            background: #fff; // date is disabled, but is highlighted as today
+                            color: $col-prim;
+                            font-weight: 900;
+                            opacity: 1;
+                        }
+                    }
+
+                    .pika-button {
+                        pointer-events: none;
+                        background: tint( $col-prim, 97.5% );
+                        color: $col-text-x-light;
+                        cursor: default;
+                    }
+                }
+
+                .pika-button {
+                    display: block;
+                    box-sizing: border-box;
+                    -moz-box-sizing: border-box;
+                    outline: none;
+                    width: 100%;
+                    padding: 12px 6px;
+                    margin: 0;
+                    border: 0;
+                    // border-radius: 3px;
+                    background-color: tint( $col-prim, 90% );
+                    color: $col-prim;
+                    font-family: inherit;
+                    font-size: .875em;
+                    line-height: 1em;
+                    text-align: center;
+                    cursor: pointer;
+                    transition: all .15s ease-in-out;
+
+                    &:hover {
+                        background: $col-prim;
+                        color: #fff;
+                    }
+                }
+            }
+
+            .pika-week {
+                font-size: .75em;
+                color: $col-text-light;
+            }
+        }
+    }
+}
