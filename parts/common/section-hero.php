@@ -29,5 +29,6 @@
             </div>
         </div>
 
+        <div class="hero-spacer"></div>
     </div>
 </section><!-- /.section--hero -->
