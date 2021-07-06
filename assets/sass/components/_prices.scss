@@ -1,0 +1,79 @@
+/*
+==========================================================================
+    Plans
+==========================================================================
+*/
+
+.plans {
+    margin: 2em 0;
+    @include flexmargin;
+
+    &__grid {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: flex-end;
+        justify-content: space-evenly;
+        margin: 2em 4em;
+    
+        .plan {
+            flex: 1 0 0;
+            margin: 3em 5em 1em;
+        }
+    }
+
+    .plan {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        background-color: #fff;
+
+        &__header {
+            position: relative;
+            padding: 2em 2em 9em;
+            background-color: $col-sec;
+            text-align: center;
+
+            &.header--most-chosen {
+                background-color: $col-prim;
+            }
+
+        }
+
+        &__body {
+            flex-grow: 1;
+            padding: 8em 3em 4em 3em; 
+            background-color: $col-grey-light;
+            text-align: center;
+            font-size: 1.125em; 
+        }
+
+        &__footer {
+            padding: 0 3em 3em;
+            background-color: $col-grey-light;
+        }
+
+        &__price {
+            position: absolute;
+            top: 5em;
+            left: calc(50% - 1.5em);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 6em;
+            height: 6em;
+            margin: -1.5em 0 0 -1.5em;
+            border-radius: 50%;
+            background-color: #fff;
+            color: #000;
+            font-size: 2em;
+            font-weight: bold;
+            box-shadow: 0 0 0 12px rgba(245, 245 ,245 , 0.7);
+        }
+
+        &__title {
+            font-size: 1.7em;
+            color: #fff; 
+        }
+    }
+}

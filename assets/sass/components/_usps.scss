@@ -1,0 +1,78 @@
+/*
+==========================================================================
+    USPs
+==========================================================================
+*/
+
+.usps-large {
+    margin: 7.5em 0;
+    @include flexmargin;
+
+    &__inner {
+        display: flex;
+        margin: -2.5em -2em;
+
+        .usp {
+            width: 50%;
+            padding: 2.5em 2em;
+        }
+    }
+
+    .usp {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column; 
+
+        &__icon {
+            flex: 0 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 2.5em;
+            width: 2.5em;
+            background-color: #fff;
+            color: $col-prim;
+            font-size: 4em;
+            line-height: 1em;
+            border: 1px solid $col-text-medium;
+            transform: rotate(45deg); 
+            margin-bottom: 1em; 
+
+            i {
+                transform: rotate(-45deg);
+            }
+        }
+
+        &__content {
+            width: 50%; 
+        }
+
+        &__title {
+            color: $col-text-medium;
+            font-size: 1.75em;
+            font-weight: normal;
+
+            &:after{
+                display:block;
+                clear:both;
+                content : "";
+                position: relative;
+                left    : 0;
+                bottom  : 0;
+                height  : 1px;
+                width   : 40%; 
+                border-bottom:1px solid $col-text;
+                margin:.25em auto;
+                padding:4px 0px;
+            }
+        }
+
+        &__description {
+            margin: .25em 0;
+            @include flexmargin;
+            color: $col-sec;
+            font-size: 1.25em;
+        }
+    }
+}
