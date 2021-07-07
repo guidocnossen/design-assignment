@@ -5,6 +5,10 @@
 /* == When screen is 580px or smaller == */
 @media only screen and (max-width : 580px) {
 
+	.content > .form-wrapper {
+		width: 90%; 
+	}
+
 }
 
 /* == When screen is larger than 580px == */

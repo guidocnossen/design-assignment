@@ -29,6 +29,6 @@
             </div>
         </div>
 
-        <div class="hero-spacer"></div>
+        <div class="hero-spacer hero-spacer--small"></div>
     </div>
 </section><!-- /.section--hero -->

@@ -9,7 +9,7 @@
 
             <?php dbk_get_part('parts/common/section-usps'); ?>
 
-            <?php //dbk_get_part('parts/common/section-action'); ?>
+            <?php dbk_get_part('parts/common/section-action'); ?>
 
             <?php dbk_get_part('parts/common/section-content-image-block'); ?>
 

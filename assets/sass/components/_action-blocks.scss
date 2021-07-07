@@ -1,0 +1,114 @@
+/*
+==========================================================================
+    Content image blocks
+==========================================================================
+*/
+
+.action-blocks {
+
+    .block {
+        position: relative;
+        overflow: hidden;
+        pointer-events: none;
+
+        &:after {
+            content: '';
+            position: absolute;
+            bottom: -37.5vh;
+            right: calc(50% - 37.5vh);
+            height: 75vh;
+            width: 75vh;
+            opacity: .05;
+        }
+
+        &.block--reversed {
+
+            &:after {
+                right: auto;
+                left: calc(50% - 37.5vh);
+            }
+
+            .block {
+
+                &__image {
+                    right: 50%;
+                    left: 0;
+                }
+
+                &__content {
+                    margin-left: auto;
+                    padding: 7.5em 5em;
+                    padding-right: 0;
+                }
+            }
+        }
+
+        &__image,
+        &__content {
+            pointer-events: auto;
+        }
+
+        &__image {
+            position: absolute;
+            z-index: 1;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 40%;
+            display: block;
+            overflow: hidden;
+
+            &-inner {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                transition: all .3s ease-out;
+            }
+
+            img {
+                height: 100%; 
+            }
+        }
+
+        &__inner {
+            position: relative;
+            z-index: 2;
+        }
+
+        &__content {
+            width: 50%;
+            padding: 2em 5em 5em;
+
+            & > .section-title {
+
+                & > .title {
+                    font-size: 2.75em;
+                    color: $col-prim;
+                    font-weight: bold;
+                    text-transform: uppercase;
+
+                    &:after{
+                        display:block;
+                        clear:both;
+                        content : "";
+                        position: relative;
+                        left    : 0;
+                        bottom  : 0;
+                        height  : 1px;
+                        width   : 2.5em; 
+                        border-bottom:1px solid $col-text-light;
+                        padding:4px 0px;
+                    }
+                }
+
+                p {
+                    margin: 2em 0; 
+                    font-size: 1.65em; 
+                    color: $col-text-light; 
+                }
+            }
+        }
+    }
+}

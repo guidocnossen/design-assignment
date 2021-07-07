@@ -5,6 +5,75 @@
 /* == When screen is 991px or smaller == */
 @media only screen and (max-width : 991px) {
 
+	.action-blocks .block {
+
+        &:after {
+            bottom: -50vw;
+            left: auto !important;
+            right: -50vw !important;
+            width: 100vw;
+            height: 100vw;
+        }
+
+        &__image {
+            position: relative;
+            left: auto;
+            width: 100%;
+            height: 0;
+            padding-bottom: 56.25%;
+
+            img {
+            	width: 100%;
+        	}
+        }
+
+        &__content {
+            width: 100%;
+            padding: 10vw 5vw !important;
+
+            & > .section-title {
+            	text-align: center;
+
+            	& .title {
+
+            		&:after{
+ 						width: 100%;
+ 						margin-top: .5em;
+                    }
+            	}
+            }
+
+            & > .btns {
+
+            	& > .btns__inner {
+	            	margin-left: auto;
+	            	margin-right: auto;
+	            }
+            }
+        }
+    }
+
+    .usps-large .usp__content {
+		margin-left: auto; 
+		margin-right: auto; 
+    }
+
+    .usps-large .usp__icon {
+    	margin-left: calc(50% - 1.25em);
+    }
+
+    .usps-large__inner {
+    	display: block;
+
+    	& > .usp {
+    		display: block;
+    		margin-left: auto;
+    		margin-right: auto;
+    		padding: 2.5em 2em;
+    		width: 100%; 
+    	} 
+    }
+
 }
 
 /* == When screen is larger than 991px == */
