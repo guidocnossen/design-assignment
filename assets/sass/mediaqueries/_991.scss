@@ -74,6 +74,18 @@
     	} 
     }
 
+    .masthead__left, 
+    .masthead__right {
+        flex-direction: column; 
+
+        :not(:first-child) {
+            margin-left: 0; 
+        }
+    }
+
+    .masthead__item {
+        width: 100%; 
+    }
 }
 
 /* == When screen is larger than 991px == */

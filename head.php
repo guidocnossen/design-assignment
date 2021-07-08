@@ -33,7 +33,6 @@
 
     <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin><?php // speeds up Google Fonts ?>
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Poppins:400,700&display=swap">
-    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/app.css?latest=<?php echo filemtime('assets/css/app.css'); ?>"><?php // modified-time value is included to prevent design caching on demo-showcase ?>
+    <link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/assets/css/app.css?latest=<?php echo filemtime('assets/css/app.css'); ?>">
 
-    <script src="<?php echo get_template_directory_uri(); ?>/assets/js/app.js?latest=<?php echo filemtime('assets/js/app.js'); ?>"></script><?php // modified-time value is included to prevent design caching on demo-showcase ?>
 </head>

@@ -9,6 +9,18 @@
 		width: 90%; 
 	}
 
+	.logo-container {
+		font-size: 4em; 
+	}
+
+	.masthead__left {
+		margin-left: calc(50% - 20em);
+	}
+
+	.masthead__right {
+		margin-right: calc(50% - 20em);
+	}
+
 }
 
 /* == When screen is larger than 580px == */

@@ -46,7 +46,7 @@
     /*
      * Returns template part
      */
-    function dbk_get_part($slug, $data = [], $echo = true) {
+    function get_part($slug, $data = [], $echo = true) {
         extract($data);
 
         $template = $slug . '.php';
@@ -60,26 +60,4 @@
         if (!$echo) {
             return ob_get_clean();
         }
-    }
-
-    /*
-     * Returns clean phonenumber compatible with href tel:
-     */
-    function dbk_phone_to_numbers($phone) {
-        return str_replace(['+', '(', ')', ' '], ['00', '','',''], $phone);
-    }
-
-    /*
-     * Returns a string limited to a certain amount of characters
-     */
-    function dbk_truncate($string, $length = 100, $append = '&hellip;') {
-        $string = trim($string);
-
-        if (strlen($string) > $length) {
-            $string = wordwrap($string, $length);
-            $string = explode("\n", $string, 2);
-            $string = $string[0] . $append;
-        }
-
-        return $string;
     }

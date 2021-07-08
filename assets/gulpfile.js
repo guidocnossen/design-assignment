@@ -62,25 +62,6 @@ gulp.task('sass', function() {
         .pipe(notice('Sass compiled!'));
 });
 
-
-gulp.task('javascript', function() {
-    return gulp.src('./js/src/app.js', {read: false})
-        .pipe(tap(function (file) {
-            file.contents = browserify(file.path, {debug: true})
-            .transform("babelify", {presets: ["env"]})
-            .bundle();
-        }))
-        .pipe(buffer())
-        .pipe(gulp.dest('./js/'))
-        .pipe(rename({suffix: '.min'}))
-        .pipe(uglify())
-        .pipe(gulp.dest('./js'))
-        .pipe(sourcemaps.init({loadMaps: true}))
-        .pipe(sourcemaps.write('./'))
-        .pipe(notice('JavaScript compiled!'));
-});
-
 gulp.task('watch', function() {
-    gulp.watch('js/src/**/*.js', ['javascript']);
     gulp.watch('sass/**/*.scss', ['sass']);
 });

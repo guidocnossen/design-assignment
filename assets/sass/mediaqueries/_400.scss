@@ -4,7 +4,13 @@
 
 /* == When screen is 400px or smaller == */
 @media only screen and (max-width : 400px) {
+    .masthead__left {
+        margin-left: calc(50% - 18em);
+    }
 
+    .masthead__right {
+        margin-right: calc(50% - 18em);
+    }
 }
 
 /* == When screen is larger than 400px == */

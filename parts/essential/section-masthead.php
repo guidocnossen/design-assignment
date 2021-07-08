@@ -8,6 +8,12 @@
         </button>
     </div>
 
+    <div class="logo-container">
+        <a href="<?php echo get_home_url(); ?>" class="logo" title="<?php echo get_bloginfo('name'); ?>">
+            P
+        </a>
+    </div>
+
     <div class="masthead__right">
         <button type="button" class="masthead__item">
             Uitleg
@@ -19,9 +25,3 @@
 
     </div>
 </header><!-- /.masthead -->
-
-<div class="logo-container">
-    <a href="<?php echo get_home_url(); ?>" class="logo" title="<?php echo get_bloginfo('name'); ?>">
-        P
-    </a>
-</div>
